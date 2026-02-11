@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+📍 Lista de Endereços
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto web desenvolvido para cadastro e exibição de endereços, com foco em organização, simplicidade e fácil visualização dos dados.
 
-Currently, two official plugins are available:
+O sistema permite inserir informações de endereço e exibi-las de forma estruturada em uma lista, sendo ideal para fins acadêmicos, estudos de HTML, CSS e JavaScript, ou projetos iniciais de front-end.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Funcionalidades
 
-## React Compiler
+Cadastro de endereços via formulário
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Campos comuns de endereço:
 
-## Expanding the ESLint configuration
+Rua
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Número
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Bairro
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Cidade
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Estado
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Complememto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+CEP
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Exibição dos endereços cadastrados em lista
+
+Interface simples e intuitiva
+
+Atualização dinâmica da página (sem recarregar)
+
+🛠️ Tecnologias Utilizadas
+
+HTML5 – Estrutura da aplicação
+
+CSS3 – Estilização e layout
+
+JavaScript – Manipulação do DOM e lógica do cadastro
+
+GitHub Pages – Hospedagem do site
+
+🌐 Acesso ao Projeto
+
+O site está disponível em:
+👉 https://nicoly-rsousa.github.io/Lista-de-enderecos/
