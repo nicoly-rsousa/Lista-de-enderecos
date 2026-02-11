@@ -1,12 +1,12 @@
 import { useState, FormEvent } from 'react';
-import { Endereco } from '../types/Endereco';
+import type { Endereco } from '../types/Endereco';
 
 interface FormularioEnderecoProps {
   onAdicionar: (endereco: Omit<Endereco, 'id'>) => void;
 }
 
 export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
-  // Estados para cada campo do formulário
+  
   const [cep, setCep] = useState('');
   const [rua, setRua] = useState('');
   const [numero, setNumero] = useState('');
@@ -15,7 +15,6 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
   const [cidade, setCidade] = useState('');
   const [estado, setEstado] = useState('');
 
-  // Função para formatar o CEP (00000-000)
   const formatarCep = (valor: string) => {
     const apenasNumeros = valor.replace(/\D/g, '');
     if (apenasNumeros.length <= 5) {
@@ -24,14 +23,12 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
     return apenasNumeros.slice(0, 5) + '-' + apenasNumeros.slice(5, 8);
   };
 
-  // Função para validar se todos os campos obrigatórios estão preenchidos
   const validarFormulario = (): boolean => {
     if (!cep || !rua || !numero || !bairro || !cidade || !estado) {
       alert('Por favor, preencha todos os campos obrigatórios!');
       return false;
     }
 
-    // Validar formato do CEP
     const cepSemHifen = cep.replace('-', '');
     if (cepSemHifen.length !== 8) {
       alert('CEP deve ter 8 dígitos!');
@@ -41,15 +38,15 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
     return true;
   };
 
-  // Função executada quando o formulário é enviado
+  
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault(); // Previne o reload da página
+    e.preventDefault(); 
 
     if (!validarFormulario()) {
       return;
     }
 
-    // Criar objeto de endereço
+  
     const novoEndereco = {
       cep,
       rua,
@@ -60,14 +57,13 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
       estado,
     };
 
-    // Chamar função do componente pai para adicionar
     onAdicionar(novoEndereco);
 
-    // Limpar formulário
+    
     limparFormulario();
   };
 
-  // Função para limpar todos os campos
+  
   const limparFormulario = () => {
     setCep('');
     setRua('');
@@ -80,7 +76,7 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
 
   return (
     <div className="formulario-container">
-      <h2>📝 Cadastrar Novo Endereço</h2>
+      
       
       <form onSubmit={handleSubmit}>
         <div className="form-row">
@@ -200,15 +196,15 @@ export function FormularioEndereco({ onAdicionar }: FormularioEnderecoProps) {
 
         <div className="form-actions">
           <button type="submit" className="btn-submit">
-            ✅ Cadastrar Endereço
+            Cadastrar Endereço
           </button>
           <button type="button" onClick={limparFormulario} className="btn-clear">
-            🗑️ Limpar Campos
+             Limpar Campos
           </button>
         </div>
       </form>
 
-      <p className="form-info">* Campos obrigatórios</p>
+      <p className="form-info">Campos obrigatórios</p>
     </div>
   );
 }
